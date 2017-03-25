@@ -12,7 +12,7 @@ istream& functions(istream& a)
     	is.clear();
     	return is;
 }
-```cpp	
+```	
 
 ##练习8.2
 >测试函数,调用参数为cin()
