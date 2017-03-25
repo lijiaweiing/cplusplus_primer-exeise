@@ -9,11 +9,17 @@ void func(const std::string &s)
     if(is)
     {
         std::string str;
-        std::string lol;
+        std::vector<std::string> vec;
         while (std::getline(is,str)) {
-            std::istringstream line(str);
-            while(line >> lol)
-                std::cout<<lol<<std::endl;
+            vec.push_back(str);
+        }
+        for(auto i = vec.begin();i != vec.end();++i)
+        {
+            std::string buff;
+            std::istringstream line(*i);
+            while (line >> buff) {
+                std::cout<<buff<<std::endl;
+            }
         }
 
     }else {
@@ -25,4 +31,3 @@ int main()
     std::string name("/home/li/opop/one.txt");
     func(name);
 }
-
