@@ -58,4 +58,68 @@ vector<int>::iterator
 读取: list<int>::const_iterator
 写入: list<int>::iterator
 
+## 练习9.9
+>begin 和 cbegin两个函数有什么区别?
+
+begin 可以进行写修改 而cbegin 不能进行修改
+
+## 练习9.10
+>下面4个对象分别是什么类型?
+vector<int> v1;
+const vector<int> v2;
+auto it1 = v1.begin(),it2 = v2.begin();
+auto it3 = v1.cbegin(),it3 = v2.cbegin()
+
+it1,it2 is vector<int>::iterator
+it3,it4 is vector<int>::const_iterator
+
+## 练习9.11
+>对6种创建和初始化vector对象的方法,每一种给出一种实例
+
+vector<int> vec;
+vector<int> vec(10);
+vector<int> vec(10,1);
+vector<int> vec = {1,2,3,4};//列表初始化
+vector<int>vec(other_vec); //
+vector<int> vec(other.begin(),other.begin()+2);
+
+## 练习9.12
+>对于接受一个容器创建拷贝构造函数,和接受两个迭代器创建拷贝的构造函数,解释它们的不同
+
+容器创建拷贝构造函数必须是相同类型,接受迭代器的拷贝迭代器的元素类型必须与容器的元素类型相同
+
+## 练习9.13
+>如何从一个list<int>初始化一个vector<double>?从一个vector<int>又如何创建?
+
+```cpp
+std::list<int> ls1 = {1,2,3,4};
+    std::vector<double> vec(ls1.begin(),ls1.end());
+    for(auto i : vec)
+    {
+        std::cout<<i << " ";
+    }
+```
+## [练习9.14](ex9_14.cpp)
+>编写一个程序,将一个list 中的char* 指针元素赋值给一个vector中string
+
+## 练习9.15
+>编写程序,判定两个vector<int>是否相等
+```cpp
+#include<vector>
+#include<iostream>
+using namespace  std;
+int main()
+{
+    vector<int> vec1 = {1,2,3,4,5,6};
+    vector<int> vec2 = {3,4,5,6,7};
+    vector<int> vec3 = {1,2,3,4,5,6};
+    cout<<(vec1 == vec2 )?"true":"false";
+    cout<<(vec1 == vec3) ?"true":"false";
+            
+}
+```
+
+
+
+
 
